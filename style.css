@@ -1,4 +1,4 @@
-*, *::before, *::after{
+*,*::after, *::before{
     box-sizing : border-box;
 }
 :root{
@@ -24,7 +24,8 @@ body{
 .cells{
     width: var(--cell-size);
     height: var(--cell-size);
-    border: 1px solid black;
+    background-attachment: black;
+    border: 1px solid white;
     display:flex;
     justify-content: center;
     align-items: center;
