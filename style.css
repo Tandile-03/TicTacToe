@@ -1,6 +1,11 @@
 *, *::before, *::after{
     box-sizing : border-box;
 }
+:root{
+    --cell-size: 100px;
+    --mark-size: cal(var(--cell-size)*.9)
+}
+
 
 body{
     margin: 0;
@@ -14,8 +19,8 @@ body{
 }
 
 .cells{
-    width: 100px;
-    height: 100px;
+    width: var(--cell-size);
+    height: var(--cell-size);
     background-color:black;
     grid-template-columns:  repeat(3,auto);
     border: 1px solid white;
