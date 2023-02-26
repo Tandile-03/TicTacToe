@@ -51,14 +51,16 @@ body{
 }
 
 .cell.x::before,
-.cell.x::after{
+.cell.x::after,
+.cell.circle::before{
     background-color: black;
 }
+
 .border.x .cell:not(.x):not(.circle):hover::before,
-.border.x .cell:not(.x):not(.circle):hover::after{
+.border.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before{
     background-color: lightgray;
 }
-
 
 .cell.x,
 .cell.circle{
@@ -72,7 +74,7 @@ body{
     position: absolute;
     width: calc(var(--mark-size)* .15);
     height: calc(var(--mark-size));
-    background-color: black;
+   /*background-color: black;*/
 }
 
 .cell.x::before,
@@ -85,21 +87,55 @@ body{
     transform: rotate(-45deg);
 }
 
-.cell.circle::before
-.cell.circle::after{
+.cell.circle::before,
+.cell.circle::after,
+.border.circle .cell:not(.x):not(.circle):hover::before,
+.border.circle .cell:not(.x):not(.circle):hover::after{
     content: '';
     position: absolute;
     border-radius: 50%;
-    background-color: black;
 }
 
-.cell.circle::before{
+.cell.circle::before,
+.border.circle .cell:not(.x):not(.circle):hover::before{
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color: black;
 }
-.cell.circle::after{
+.cell.circle::after,
+.border.circle .cell:not(.x):not(.circle):hover::after{
     width: calc(var(--mark-size)* .7);
     height: calc(var(--mark-size)* .7);
-    background-color: black;
+    background-color: white;
+}
+
+.winning-message{
+    display:none;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content:center;
+    align-items: center;
+    color:white;
+    font-size: 5rem;
+}
+
+.winning-message button{
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+.winning-message button{
+    background-color: black ;
+    color:white;
+    border-color: white ;
+}
+
+.winning-message.show{
+    display: flex;
 }
