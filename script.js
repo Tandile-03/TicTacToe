@@ -28,9 +28,9 @@ function startGame(){
         cell.classList.remove(O_CLASS)
         cell.removeEventListener('click', handleClick)
         cell.addEventListener('click', handleClick, {once: true})
-})
-setBoardHover()
-winningMessageElement.classList.remove('show')
+    })
+  setBoardHover()
+  winningMessageElement.classList.remove('show')
 }
 
 function handleClick(e){
@@ -39,7 +39,7 @@ function handleClick(e){
     placeMark(cell, currentClass)
     if(checkWin(currentClass)){
         endGame(false)
-    }else if(checkDraw(currentClass)){
+    }else if(checkDraw()){
         endGame(true)      
     }
     else{
@@ -52,7 +52,8 @@ function endGame(draw){
     if(draw){
         winningMessageTextElement.innerText ='Draw!'
     }else{
-        winningMessageTextElement.innerText = `${circleTurn ? "O's":"X's"} Wins!`
+        winningMessageTextElement.innerText = `${circleTurn ? "O's" : 
+        "X's"} Wins!`
     }
     winningMessageElement.classList.add('show')
 }
@@ -84,7 +85,8 @@ function setBoardHover(){
 function checkWin(currentClass){
     WINNING_COMBINATIONS.some(combination =>{
         return combination.every(index =>{
-            return cellElements[index].classList.contains(currentClass)})
+            return cellElements[index].classList.contains(currentClass)
+        })
     })
 }
 
