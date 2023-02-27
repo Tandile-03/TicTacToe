@@ -25,16 +25,15 @@ body{
 .cell{
     width: var(--cell-size);
     height: var(--cell-size);
-    background-color: black;
-    border: 1px solid white;
-    /* display:flex;
+    border: 1px solid black;
+    display:flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    cursor: pointer; */
+    cursor: pointer; 
 }
 
-/* .cell:first-child,
+.cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3){
     border-top: none;
@@ -52,6 +51,10 @@ body{
     border-bottom: none;
 }
 
+.cell.x,
+.cell.circle{
+    cursor: not-allowed;
+}
 .cell.x::before,
 .cell.x::after,
 .cell.circle::before{
@@ -64,10 +67,6 @@ body{
     background-color: lightgray;
 }
 
-.cell.x,
-.cell.circle{
-    cursor: not-allowed;
-}
 .cell.x::before,
 .cell.x::after,
 .border.x .cell:not(.x):not(.circle):hover::before,
@@ -96,6 +95,7 @@ body{
     content: '';
     position: absolute;
     border-radius: 50%;
+    background-color: black;
 }
 
 .cell.circle::before,
@@ -118,10 +118,12 @@ body{
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, .9);
+    display: flex;
     justify-content:center;
     align-items: center;
     color:white;
     font-size: 5rem;
+    flex-direction: column;
 }
 
 .winning-message button{
@@ -140,4 +142,4 @@ body{
 
 .winning-message.show{
     display: flex;
-}*/
+}
