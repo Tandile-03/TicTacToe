@@ -11,12 +11,14 @@ const Winning_Combinations =[
     [2,4,6]
 ]
 const cellElements = document.querySelector('[data-cell]')
+let circleTurn
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMesage')
 const winningMessageTextElement= document.querySelector('[data-winning-message]')
 const restartButton = document.getElementById('restartbutton')
 
 startGame()
+
 restartButton.addEventListener('click', startGame)
 
 function startGame(){
@@ -25,7 +27,7 @@ function startGame(){
     cell.classList.remove(O_CLASS)
     cell.removeEventListener('click', handleClick)
     cellElements.forEach(cell =>{
-    cell.addEventListener('click', handleClick, {once:true})
+    cell.addEventListener('click', handleClick, {once: true})
 })
 setBoardHover()
 winningMessageElement.classList.remove('show')
