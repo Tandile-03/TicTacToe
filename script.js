@@ -17,7 +17,6 @@ const winningMessageTextElement= document.querySelector('[data-winning-message]'
 const restartButton = document.getElementById('restartbutton')
 
 startGame()
-
 restartButton.addEventListener('click', startGame)
 
 function startGame(){
