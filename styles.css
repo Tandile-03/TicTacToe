@@ -1,10 +1,10 @@
 *, *::after, *::before{
     box-sizing : border-box;
 }
-:root{
+/* :root{
     --cell-size: 100px;
     --mark-size: calc(var(--cell-size)*.9);
-}
+} */
 
 
 body{
@@ -22,8 +22,8 @@ body{
 }
 
 .cells{
-    width: var(--cell-size);
-    height: var(--cell-size);
+    width: 100px;
+    height: 100px;
     background-color: black;
     border: 1px solid white;
     /* display:flex;
