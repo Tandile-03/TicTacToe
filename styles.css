@@ -22,7 +22,7 @@ body{
     grid-template-columns: repeat(3,auto);
 }
 
-.cells{
+.cell{
     width: var(--cell-size);
     height: var(--cell-size);
     background-color: black;
