@@ -12,7 +12,7 @@ const WINNING_COMBINATIONS =[
 ]
 const cellElements = document.querySelector('[data-cell]')
 const board = document.getElementById('board')
-const winningMessageElement = document.getElementById('winningMesage')
+const winningMessageElement = document.getElementById('winningMessage')
 const winningMessageTextElement= document.querySelector('[data-winning-message-text]')
 const restartButton = document.getElementById('restartButton')
 let circleTurn
