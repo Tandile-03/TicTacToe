@@ -24,7 +24,7 @@ body{
 .cells{
     width: var(--cell-size);
     height: var(--cell-size);
-    background-attachment: black;
+    background-color: black;
     border: 1px solid white;
     /* display:flex;
     justify-content: center;
