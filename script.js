@@ -1,22 +1,24 @@
 const X_CLASS ='x'
 const O_CLASS = 'circle'
-const Winning_Combinations =[
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
+const WINNING_COMBINATIONS =[
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
 ]
 const cellElements = document.querySelector('[data-cell]')
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMesage')
-const winningMessageTextElement= document.querySelector('[data-winning-message]')
-const restartButton = document.getElementById('restartbutton')
+const winningMessageTextElement= document.querySelector('[data-winning-message-text]')
+const restartButton = document.getElementById('restartButton')
+let circleTurn
 
 startGame()
+
 restartButton.addEventListener('click', startGame)
 
 function startGame(){
@@ -25,7 +27,7 @@ function startGame(){
     cell.classList.remove(O_CLASS)
     cell.removeEventListener('click', handleClick)
     cellElements.forEach(cell =>{
-    cell.addEventListener('click', handleClick, {once:true})
+    cell.addEventListener('click', handleClick, {once: true})
 })
 setBoardHover()
 winningMessageElement.classList.remove('show')
@@ -41,17 +43,25 @@ function handleClick(e){
     }else if(checkDraw(currentClass)){
         endGame(true)      
     }
+    else{
     swapTurns()
     setBoardHover()
+    }
 }
 
 function endGame(draw){
     if(draw){
-        winningMessageElement.innerText ='Draw!'
+        winningMessageTextElement.innerText ='Draw!'
     }else{
-        winningMessageTextElement.innerText = '${circleTurn ? Os:Xs} Wins!'
+        winningMessageTextElement.innerText = `${circleTurn ? "O's":"X's"} Wins!`
     }
     winningMessageElement.classList.add('show')
+}
+function checkDraw(){
+    return [...cellElements].every(cell =>{
+        return cell.classList.contains(X_CLASS) ||
+        cell.contains(O_CLASS)
+    })
 }
 
 function placeMark(cell, currentClass){
@@ -73,15 +83,9 @@ function setBoardHover(){
 }
 
 function checkWin(currentClass){
-    Winning_Combinations.some(combination =>{
+    WINNING_COMBINATIONS.some(combination =>{
         return combination.every(index =>{
             return cellElements[index].classList.contains(currentClass)})
     })
 }
 
-function checkDraw(){
-    return [...cellElements].every(cell =>{
-        return cell.classList.contains(X_CLASS) ||
-        cell.contains(O_CLASS)
-    })
-}
