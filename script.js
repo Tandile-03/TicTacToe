@@ -20,7 +20,7 @@ let circleTurn
 
 startGame()
 
-//restartButton.addEventListener('click', startGame)
+restartButton.addEventListener('click', startGame)
 
 function startGame(){
     circleTurn =false
