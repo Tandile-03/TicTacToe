@@ -43,9 +43,9 @@ function handleClick(e){
         endGame(true)      
     }
     else{
-    swapTurns()
+    
     setBoardHover()
-    }
+    }swapTurns()
 }
 
 function endGame(draw){
