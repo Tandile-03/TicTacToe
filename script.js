@@ -41,8 +41,8 @@ function handleClick(e){
     const cell = e.target
     const currentClass = circleTurn ? O_CLASS : X_CLASS
     placeMark(cell, currentClass)
-    // if(checkWin(currentClass)){
-    //     endGame(false)
+    if(checkWin(currentClass)){
+        console.log('winner')}
     // }else if(checkDraw()){
     //     endGame(true)      
     // }
@@ -87,11 +87,10 @@ function setBoardHoverClass(){
     }
 }
 
-// function checkWin(currentClass){
-//     return WINNING_COMBINATIONS.some(combination =>{
-//         return combination.every(index =>{
-//             return cellElements[index].classList.contains(currentClass)
-//         })
-//     })
-// }
-
+function checkWin(currentClass){
+    return WINNING_COMBINATIONS.some(combination =>{
+        return combination.every(index =>{
+            return cellElements[index].classList.contains(currentClass)
+        })
+    })
+}
