@@ -18,24 +18,24 @@ const winningMessageTextElement= document.querySelector('[data-winning-message-t
 
 let circleTurn
 
-cellElements.forEach(cell =>
-    {cell.addEventListener('click', handleClick, {once: true})
-})
-//startGame()
+//cellElements.forEach(cell =>
+    //{cell.addEventListener('click', handleClick, {once: true})
+//})
+startGame()
 
 // restartButton.addEventListener('click', startGame)
 
-// function startGame(){
-//     circleTurn =false
-//     cellElements.forEach(cell =>{
-//         cell.classList.remove(X_CLASS)
-//         cell.classList.remove(O_CLASS)
-//         cell.removeEventListener('click', handleClick)
-//         cell.addEventListener('click', handleClick, {once: true})
-//     })
-//   setBoardHoverClass()
-//   winningMessageElement.classList.remove('show')
-// }
+function startGame(){
+    circleTurn =false
+    cellElements.forEach(cell =>{
+        // cell.classList.remove(X_CLASS)
+        // cell.classList.remove(O_CLASS)
+        // cell.removeEventListener('click', handleClick)
+        cell.addEventListener('click', handleClick, {once: true})
+    })
+  setBoardHoverClass()
+  //winningMessageElement.classList.remove('show')
+}
 
 function handleClick(e){
     const cell = e.target
