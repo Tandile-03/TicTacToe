@@ -39,7 +39,7 @@ function handleClick(e){
     const currentClass = circleTurn ? O_CLASS : X_CLASS
     placeMark(cell, currentClass)
     if(checkWin(currentClass)){
-        endGame(false)
+        console.log('winner')
      }
     //  else if(checkDraw()){
     //      endGame(true)      
