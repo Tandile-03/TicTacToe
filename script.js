@@ -18,9 +18,6 @@ const winningMessageTextElement= document.querySelector('[data-winning-message-t
 
 let circleTurn
 
-//cellElements.forEach(cell =>
-    //{cell.addEventListener('click', handleClick, {once: true})
-//})
 startGame()
 
 // restartButton.addEventListener('click', startGame)
@@ -34,7 +31,8 @@ function startGame(){
         cell.addEventListener('click', handleClick, {once: true})
     })
   setBoardHoverClass()
-  //winningMessageElement.classList.remove('show')
+  //
+  winningMessageElement.classList.remove('show')
 }
 
 function handleClick(e){
