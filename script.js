@@ -22,7 +22,7 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame(){
-    //circleTurn =true
+    circleTurn =false
     cellElements.forEach(cell =>{
         cell.classList.remove(X_CLASS)
         cell.classList.remove(O_CLASS)
@@ -83,7 +83,7 @@ function setBoardHoverClass(){
 }
 
 function checkWin(currentClass){
-    WINNING_COMBINATIONS.some(combination =>{
+    return WINNING_COMBINATIONS.some(combination =>{
         return combination.every(index =>{
             return cellElements[index].classList.contains(currentClass)
         })
