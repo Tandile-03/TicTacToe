@@ -42,11 +42,11 @@ function handleClick(e){
         endGame(false)
      }
      else if(checkDraw()){
-         endGame(true)      
+        endGame(true)      
      }
      else{
         swapTurns()
-    setBoardHoverClass()
+        setBoardHoverClass()
      }    
 }
 
@@ -64,7 +64,7 @@ function endGame(draw){
 function checkDraw(){
     return [...cellElements].every(cell =>{
         return cell.classList.contains(X_CLASS) ||
-        cell.contains(O_CLASS)
+        cell.classList.contains(O_CLASS)
     })
 }
 
