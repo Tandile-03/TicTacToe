@@ -13,7 +13,7 @@ const WINNING_COMBINATIONS =[
 const cellElements = document.querySelectorAll('[data-cell]')
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
-const winningMessageTextElement= document.querySelectorAll('[data-winning-message-text]')
+const winningMessageTextElement= document.querySelector('[data-winning-message-text]')
 const restartButton = document.getElementById('restartButton')
 let circleTurn
 
@@ -57,6 +57,7 @@ function endGame(draw){
     }
     winningMessageElement.classList.add('show')
 }
+
 function checkDraw(){
     return [...cellElements].every(cell =>{
         return cell.classList.contains(X_CLASS) ||
