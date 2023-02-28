@@ -22,7 +22,7 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame(){
-    circleTurn =true
+    //circleTurn =true
     cellElements.forEach(cell =>{
         cell.classList.remove(X_CLASS)
         cell.classList.remove(O_CLASS)
