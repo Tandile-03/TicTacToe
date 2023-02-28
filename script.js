@@ -41,9 +41,9 @@ function handleClick(e){
     if(checkWin(currentClass)){
         endGame(false)
      }
-     else if(checkDraw()){
-         endGame(true)      
-     }
+    //  else if(checkDraw()){
+    //      endGame(true)      
+    //  }
      else{
         swapTurns()
     setBoardHoverClass()
@@ -61,12 +61,12 @@ function endGame(draw){
     winningMessageElement.classList.add('show')
 }
 
-function checkDraw(){
-    return [...cellElements].every(cell =>{
-        return cell.classList.contains(X_CLASS) ||
-        cell.contains(O_CLASS)
-    })
-}
+// function checkDraw(){
+//     return [...cellElements].every(cell =>{
+//         return cell.classList.contains(X_CLASS) ||
+//         cell.contains(O_CLASS)
+//     })
+// }
 
 function placeMark(cell, currentClass){
     cell.classList.add(currentClass)
