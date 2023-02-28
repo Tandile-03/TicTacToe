@@ -44,7 +44,7 @@ function handleClick(e){
     }
     else{
     
-    setBoardHover()
+    setBoardHoverClass()
     }swapTurns()
 }
 
