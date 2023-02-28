@@ -40,7 +40,7 @@ function handleClick(e){
     const currentClass = circleTurn ? O_CLASS : X_CLASS
     placeMark(cell, currentClass)
     if(checkWin(currentClass)){
-        console.log('winner')
+        endGame(false)
      }//else if(checkDraw()){
     //     endGame(true)      
     // }
@@ -53,7 +53,8 @@ function handleClick(e){
 function endGame(draw){
     if(draw){
 //winningMessageTextElement.innerText ='Draw!'
-    }else{
+    }
+    else{
         winningMessageTextElement.innerText = `${circleTurn ? "O's" : 
         "X's"} Wins!`
     }
