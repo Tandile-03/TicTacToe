@@ -10,10 +10,10 @@ const WINNING_COMBINATIONS =[
     [0, 4, 8],
     [2, 4, 6]
 ]
-const cellElements = document.querySelector('[data-cell]')
+const cellElements = document.querySelectorAll('[data-cell]')
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
-const winningMessageTextElement= document.querySelector('[data-winning-message-text]')
+const winningMessageTextElement= document.querySelectorAll('[data-winning-message-text]')
 const restartButton = document.getElementById('restartButton')
 let circleTurn
 
