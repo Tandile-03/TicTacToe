@@ -48,7 +48,7 @@ function handleClick(e){
     // }
     // else{}
     swapTurns()
-    //setBoardHoverClass()
+    setBoardHoverClass()
     
 }
 
@@ -77,15 +77,15 @@ function swapTurns(){
     circleTurn = !circleTurn
 }
 
-// function setBoardHoverClass(){
-//     board.classList.remove(X_CLASS)
-//     board.classList.remove(O_CLASS)
-//     if (circleTurn){
-//         board.classList.add(O_CLASS)
-//     }else{
-//         board.classList.add(X_CLASS)
-//     }
-// }
+function setBoardHoverClass(){
+    board.classList.remove(X_CLASS)
+    board.classList.remove(O_CLASS)
+    if (circleTurn){
+        board.classList.add(O_CLASS)
+    }else{
+        board.classList.add(X_CLASS)
+    }
+}
 
 // function checkWin(currentClass){
 //     return WINNING_COMBINATIONS.some(combination =>{
