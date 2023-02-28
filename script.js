@@ -25,13 +25,13 @@ startGame()
 function startGame(){
     circleTurn =false
     cellElements.forEach(cell =>{
-        // cell.classList.remove(X_CLASS)
-        // cell.classList.remove(O_CLASS)
-        // cell.removeEventListener('click', handleClick)
+        cell.classList.remove(X_CLASS)
+        cell.classList.remove(O_CLASS)
+        cell.removeEventListener('click', handleClick)
         cell.addEventListener('click', handleClick, {once: true})
     })
   setBoardHoverClass()
-  //winningMessageElement.classList.remove('show')
+  winningMessageElement.classList.remove('show')
 }
 
 function handleClick(e){
